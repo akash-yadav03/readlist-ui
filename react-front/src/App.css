@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  justify-content: flex-start; /* keeps content at the top */
+  min-height: 50px;     /* full viewport height */
+  padding-top: 20px;     /* space from the very top */
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.list {
+  background-color: #19b4ec;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 15px auto;
+  width: 80%;
+  max-width: 500px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.list:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove default list styling */
+.list li {
+  list-style: none;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+button {
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* Make labels stand out */
+/* Hamburger button */
+/* Hamburger button */
+.hamburger {
+  width: 40px;
+  height: 30px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.hamburger span {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #333;
+  left: 0;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 13px;
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Active (X animation) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 13px;
+}
+
+/* Menu panel (LEFT) */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 300px;
+  height: 100vh;
+  background: #f9f9f9;
+  padding: 80px 20px 20px;
+  transition: left 0.4s ease;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu.show {
+  left: 0;
+}
+
+.menu h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 6px 0;
+  color: #666;
+}
